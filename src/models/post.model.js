@@ -4,30 +4,23 @@ const mongoose = require ("mongoose")
 
 const postSchema = new mongoose.Schema ({
     postTitle:{
-        type:String,
-        minlength:10,
+        type: String,
         maxlength:100,
         required:true
     },
-    postContend: {
-        type:String,
+    postContent: {
+        type: String,
         minlength:10,
         required:true
     },
     postImage: {
-        type:String,
+        type: String,
         minlength:10,
         maxlength:100,
         required:true
     },
-    postImageTitle:{
-        type:String,
-        minlength:10,
-        maxlength:30,
-    },
     postlectureTime: {
-        type:Number,
-        minlength:1,
+        type: Number,
         required:true
     },
     postTags:[
@@ -37,13 +30,13 @@ const postSchema = new mongoose.Schema ({
         },
     ],
     date:{
-        type:String,
+        type: Date,
         required:true
     },
     heartReactions: {
-        type:Number,
+        type: Number,
         required:true
-    },
+    }
 })
 //* El modelo se exporta
 module.exports = mongoose.model("posts",postSchema,"Posts");
